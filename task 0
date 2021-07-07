@@ -1,12 +1,17 @@
+ 
 import random
-Array = [random.randint(-100, 100) for i in range(30)]
-MaxNumber = max(Array)
+#Генерує ряд з 30 випадкових цілих чисел від -100 до + 100
+randomlist = random.sample(range(-100, 100), 30)
+print("\n")
+print(randomlist)
 
-print(Array)
-print("Max number is " + str(MaxNumber))
-print("This number is in " + str(Array.index(MaxNumber)+1) + "th place")
-print("Numbers that are nearby and < 0")
+print("\nМаксимальний елемент рядку: ", max(randomlist)) #знаходить і виводить максимальний елемент ряду
+print("Порядковий номер: ", randomlist.index(max(randomlist))) #виводить порядковий номер максимального елемента ряду
+print("\n")
 
-for i in range(29):
-  if Array[i]<0 and Array[i+1]<0:
-    print("Numbers : " + str(Array[i]) + " and " + str(Array[i+1]))
+#Рядок, що складається тільки з непарних чисел вихідного списку
+newlist = [i for i in randomlist if (i % 2) == 1] #генерує ряд з умовою
+if len(newlist) == 0: 
+    print("Таких чисел немає!") #повідомляє, що таких чисел немає
+print(sorted(newlist, reverse=True)) #рядок, виведений в порядку зменшення елементів
+print("\n")
