@@ -1,4 +1,4 @@
- 
+
 import random
 #Генерує ряд з 30 випадкових цілих чисел від -100 до + 100
 randomlist = random.sample(range(-100, 100), 30)
